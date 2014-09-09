@@ -28,4 +28,5 @@ var WordShortenerDialog = {
     }
 };
 
+tinyMCEPopup.requireLangPack();
 tinyMCEPopup.onInit.add(WordShortenerDialog.init, WordShortenerDialog);
