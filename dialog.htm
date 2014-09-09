@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{#url_dlg.title}</title>
+	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="js/dialog.js"></script>
+</head>
+<body style="display:none;">
+<form onsubmit="UrlShortenerDialog.insert();return false;" action="#">
+    <div align="center">
+		<div class="title">{#url_dlg.title}:<br /><br /></div>
+        <table border="0" cellpadding="4" cellspacing="0">
+            <tr>
+                <td class="nowrap">
+                    <label id="hreflabel" for="href">{#url_dlg.url}</label>
+                </td>
+                <td>
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                                <input id="href" name="href" type="text" class="mceFocus" value="" onchange="selectByValue(this.form,'linklisthref',this.value);" />
+                            </td>
+                            <td id="hrefbrowsercontainer">&nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr id="linklisthrefrow">
+                <td class="column1">
+                    <label for="linklisthref">{#url_dlg.list}</label>
+                </td>
+                <td colspan="2" id="linklisthrefcontainer">
+                    <select id="linklisthref">
+                        <option value=""></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+            <td class="column1">
+                <label for="anchorlist">{#url_dlg.anchor_names}</label>
+            </td>
+            <td colspan="2" id="anchorlistcontainer">
+                <select id="anchorlist">
+                    <option value=""></option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="targetlistlabel" for="targetlist">{#url_dlg.target}</label>
+                </td>
+                <td id="targetlistcontainer">
+                    <select id="targetlist">
+                        <option value=""></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="nowrap">
+                    <label id="titlelabel" for="title">{#url_dlg.titlefield}</label>
+                </td>
+                <td>
+                    <input id="title" name="title" type="text" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="classlabel" for="classlist">{#class_name}</label>
+                </td>
+                <td>
+                    <select id="classlist" name="classlist" onchange="changeClass();">
+                        <option value="" selected="selected">{#not_set}</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <div class="mceActionPanel">
+            <div style="float: left">
+                <input type="button" id="insert" name="insert" value="{#url_dlg.insert}" onclick="UrlShortenerDialog.insert();" />
+            </div>
+
+            <div style="float: right">
+                <input type="button" id="cancel" name="cancel" value="{#url_dlg.cancel}" onclick="tinyMCEPopup.close();" />
+            </div>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>
